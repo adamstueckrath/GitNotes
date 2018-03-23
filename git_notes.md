@@ -50,6 +50,11 @@ Contains all commits or changes to the git repository
 #### Adding Git to Existing Project
 1. Type `git init .`
 * You need to be in the working folder to use '.' operator or else cd out and use `git init folder name`
+2. Add files to git stagging area by typing `git add .` 
+* You can use the '.' as a wild card that means all files in directory
+3. Commit with the core editor by typing `git commit` 
+* This will bring up Sublime text and you can type your commit message instead of writing it on the command prompt
+
 
 
 
