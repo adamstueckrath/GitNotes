@@ -55,6 +55,9 @@ Contains all commits or changes to the git repository
 3. Commit with the core editor by typing `git commit` 
 * This will bring up Sublime text and you can type your commit message instead of writing it on the command prompt
 
+#### Express Commits
+* To list all files being tracked type `git ls-files`
+
 
 
 
