@@ -57,6 +57,12 @@ Contains all commits or changes to the git repository
 
 #### Express Commits
 * To list all files being tracked type `git ls-files`
+1. Type `git commit -am "Commit Notes"`
+* The '-a' command tells git to add modify files to get stagging area 
+* We're adding a modifying file to the stagging area because that's how git works. But really we are adding the modification of the file to the stagging area. 
+
+
+#### Backing Out Changes By Unstagging from Stagging Area
 
 
 
