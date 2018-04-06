@@ -61,10 +61,27 @@ Contains all commits or changes to the git repository
 * The '-a' command tells git to add modify files to get stagging area 
 * We're adding a modifying file to the stagging area because that's how git works. But really we are adding the modification of the file to the stagging area. 
 
-
 #### Backing Out Changes By Unstagging from Stagging Area
+* If you added changes to your stagging area but would like to back out of them and revert to the most recent commit: 
+* Type `git reset HEAD [file name]` this will reset the changes in the stagging area. Meaning nothing will be deleted or lost but the file changes will not be in the stagging area anymore
+* To discard the changes entirely and return to the last known good state of the file:
+* Type `git checkout -- [file name]`
 
-
+#### Git History and Making New Commands with Alias
+* Type `git log` to view commit history
+* Type `git help log` to get information about different types of log commands
+* Type `git log --online --graph --decorate --all`
+* Create a git Alias, which is basically a new command that is a abbraviated of existing git commands
+1. Type `git config --global alias.hist "log --online --graph --all"`
+* The syntax is:
+** Write to git config file
+** Pass '--global' to make it a global alias
+** Name the alias command, so 'alias.hist' where 'hist' is the command
+** Type the git command in quotes - "log --online --graph --all"
+2. Verify that the command has been entered by checking the git config global list:
+* Type `git config --global --list`
+* You should see the alias at the bottom
+3. To use an alias, type `git [alias name]`
 
 
 ## Advanced: Beyond the Basics
