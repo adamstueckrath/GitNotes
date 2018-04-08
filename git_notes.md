@@ -160,7 +160,6 @@ Types of Merges:
 #### Reset and Reflog
 NEED TO UPDATE
 
-
 ## SSH Authentication 
 #### Generating an SSH Key
 1. Create a directory called `.ssh` in your user home directory (/Users/adamstueckrath)
@@ -184,6 +183,14 @@ NEED TO UPDATE
 * ssh should connect and you should see your github username  in the terminal
 
 ## GitHub Repository
+#### Linking a Repository - Connect Local Repo to GitHub
+1. Create an empty git repository on GitHub
+2. Copy the git remote add origin command on the GitHub website and enter it into the terminal 
+3. Type `git remote -v` to verify that the local repo is associated to the GitHub remote repo
+
+#### Pushing to GitHub - Upload Local Repo
+1. To upload your local repo to GitHub, type `git push -u origin master`
+
 #### Create a Local Copy with Clone
 1. Type `git clone git@github.com:adamstueckrath/my-website.git`
 * When doing a git clone command, by default git sets up origin to be the name of the remote reference
@@ -222,7 +229,6 @@ NEED TO UPDATE
 1. Type `git fetch` to update the references from github
 2. Type `git pull` to fast-forward and update the local branch 
 
-
 ## GitHub Repository Branches 
 #### Creating Branches on GitHub
 1. Not best practice. Better to create locally and then push to github
@@ -231,7 +237,6 @@ NEED TO UPDATE
 #### Creating Local Branches
 1. Type `git checkout -b 'branch name'`
 2. Push branch to github, type `git push -u origin branch name`
-
 
 #### Merging Locally
 1. Check out 
