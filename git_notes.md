@@ -185,7 +185,7 @@ NEED TO UPDATE
 ## GitHub Repository
 #### Linking a Repository - Connect Local Repo to GitHub
 1. Create an empty git repository on GitHub
-2. Copy the git remote add origin command on the GitHub website and enter it into the terminal 
+2. Copy the `git remote add origin` command on the GitHub website and enter it into the terminal 
 3. Type `git remote -v` to verify that the local repo is associated to the GitHub remote repo
 
 #### Pushing to GitHub - Upload Local Repo
