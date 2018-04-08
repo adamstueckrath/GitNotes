@@ -83,8 +83,83 @@ Contains all commits or changes to the git repository
 * You should see the alias at the bottom
 3. To use an alias, type `git [alias name]`
 
+#### Rename and Delete Files
+* To rename a file in a git repo type `git mv [filname] [new filename]`
+* By using a git command, you will track the changes to the file name and Git will reconize that it's the same file but just renamed
+* To delete a file in a git repo type `git rm [filename]` 
+* Using the git command to delete a file will automatically track the changes  
+
+#### Managing Files Outside of Git
+* You created new files using a bash command (`subl example.txt`) in a git repo 
+* Or you renamed files using the `mv example.txt example_2.txt` 
+* Git will see the new files as untracked and also see the renaming of a file as a deletion and adding an untracked file. You will need to tell git about those changes 
+* In order to include BOTH deletions and additions you need to use `git add -A` 
+* If you wanted to delete a file in a git repo using a bash command `rm [filename]` you will need to update those changes to the stagging area. 
+* To stage a deleted file from the bash command type `git add -u` '-u' means update
+
+#### Excluding Unwanted Files
+* To exclude unwanted files from a git repo, you will need to create a gitignore file that list the unwanted files 
+* Type `subl .gitignore` to create the git ignore file in the repo
+* The syntax is just one file name per line. For example, log.txt
+* You can use wildcards such as `*.log` to ignore all log files
+* Stage and commit the .gitignore file
 
 ## Advanced: Beyond the Basics
+#### Comparing Differences Using Diff
+* Type `git hist` to get a tree log of all of the commmits and their ids
+* To see differences between two commit points, type `git diff [commit id] [HEAD]` You will see the difference between that commit id and the HEAD.
+* To use the diff tool, p4merge, type `git difftool`
+* To get help on the diff command, type `git help diff`
+* Any parameter that can be passed in a `git diff` command can be passed using the difftool
+
+#### Branch and Merge Types
+* Branching is a timeline of commits
+* Branch are the names or labels to timelines in git 
+* You can create or delete branches without affecting timelines because all you are doing is creating or deleting labels of commit ranges in git
+Types of Merges:
+1. Fast-Forward Applied:
+* Simple and straight forward
+* Happens in the simplest of cases when no additional work has been detected on the master branch. 
+* Git will apply all commits on the other branch to the parent or master branch as if you didn't branch off to begin with
+2. Automatic: 
+* Happens when git detects non-conflicting changes on the parent branch
+* Git will automatically resolve any conflicts 
+* Perserves both branches (timelines)
+3. Manual:
+* Happens when git is unable to resolve all of the merge conflicts
+* Git enters a Conflicting Merge State
+* Automatic merging not possible
+* Changes are saved in a Merge Commit
+
+#### Special Markers
+* HEAD
+* Points to the last commit of the current branch
+* HEAD is normally the last commit of the current branch
+* As you switch branches HEAD moves to be at the last commit location of that branch 
+
+#### Branching A Fork In Time
+* Use feature or topic branches in order to seperate out changes that you want to make off of the master branch
+* To see the branch you are on, type `git branch`
+* To create and switch to new branch type `git checkout -b [branch to create]`
+* Creating a branch is good if you want to isolate new features from the master branch. You can carry over modified or unstaged changes into your new branch from master. 
+* You can see the differences in branches by using the difftool or diff command and passing in the names of the branches to compare. For example, type `git diff updates master` to compare updates branch to master 
+1. To inegrate changes on a feature branch you need to first switch back to the parent branch, which is master. Type `git checkout master`. The checkout command allows you to switch between branches
+2. `git merge [branch name to merge]` to merge (fast-forward merge) branch to master
+3. Since branches in git are just labels of timelines, once you integrate a branch into the main timeline, you will want to remove the extra branch. Type `git branch -d [name of branch to delete]`
+4. Type `git branch` and `git hist` to check the branch and updated history
+
+#### Stashing - Save Temporary Changes
+* If you're in the middle of working on a file and need to switch to work on something else, but are not ready to commit your changes, you can "stash" the work. 
+1. type `git stash` which will save the last commit and any modified files into a "work in progress" area on master
+2. type `git stash list` to see a list of your stashes
+3. After the stash you are back on a clean work directory and are able to work on something else 
+4. Edit the files that you need to and when you're done do a git commit
+5. Verify that you are back to a working directory with a git status and then apply the stash 
+6. type `git stash pop` The 'stash' will apply whatever the stash is and then the 'pop' will drop the stash that was applied. Now you can continuing working and then commit your changes. 
+
+#### Reset and Reflog
+NEED TO UPDATE
+
 
 ## SSH Authentication 
 #### Generating an SSH Key
@@ -160,13 +235,6 @@ Contains all commits or changes to the git repository
 
 #### Merging Locally
 1. Check out 
-
-#### Locally Switch to a Branch on GitHub
-
-
-#### Cleaning Up By Deleting Branches and References
-
-
 
 
 
